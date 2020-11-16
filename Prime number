@@ -1,0 +1,12 @@
+print("Enter a number:", )
+n = int(input())
+count = 0
+
+for i in range(2, n):
+    if n % i == 0:
+        count = count + 1
+        break
+if (count == 0 and n != 1):
+    print('This number is prime')
+else:
+    print('This number is not prime')
