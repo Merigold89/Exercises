@@ -1,0 +1,20 @@
+gest = []
+
+while True:
+      print('Enter the name of the guest. End entry with "."', )
+      name = input()
+      name2 = str(name)
+      check = list(name)
+      if ' ' in check:
+            number1 = check.index(' ')
+            new = name2[0:number1]
+            gest.append(new)
+      #if ' ' in check:
+            #new = name
+            #gest.append(new)
+      elif name.isalpha():
+            gest.append(name)
+      elif name == ".":
+            print(gest)
+            print(len(gest))
+            break
