@@ -1,0 +1,16 @@
+numbers = []
+
+while True:
+      print('Enter the number:', )
+      n = int(input())
+
+      if n > 100:
+            if len(numbers) == 0:
+                  print('The list is empty - no number meets the requirements.')
+            else:
+                  print(numbers)
+                  print(len(numbers),'numbers meet the conditions.')
+            break
+      elif n >= 10:
+            if n <= 100:
+                  numbers.append(n)
