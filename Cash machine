@@ -1,0 +1,47 @@
+class PiggyBank:
+
+    def __init__(self, dollars, cents):
+        self.dollars = dollars
+        self.cents = cents
+
+    def add_money(self, deposit_dollars, deposit_cents):
+        self.deposit_dollars = deposit_dollars
+        self.dollars = self.dollars + self.deposit_dollars
+        self.deposit_cents = deposit_cents
+        self.cents = self.cents + self.deposit_cents
+        if self.cents >= 100:
+            rest_dollars = self.cents // 100
+            rest_cents = self.cents % 100
+            self.cents = 0
+            self.cents = self.cents + rest_cents
+            self.dollars = self.dollars + rest_dollars
+        self.account_balance()
+
+    def account_balance(self):
+        print('\nYour account balance is:')
+        print('Dollars: {0}' .format(self.dollars))
+        print('Cents: {0}'.format(self.cents))
+
+def cash():
+    print('Dollars:')
+    dollars_n = int(input())
+    print('Cents:')
+    cents_n = int(input())
+    payment.add_money(dollars_n, cents_n)
+
+def cash_deposit():
+    print('\nDo you want to deposit cash? Y/N')
+    decision = input()
+    if decision == 'Y':
+        print('\nHow much do you want to deposit?\n')
+        cash()
+    elif decision == 'N':
+        print('\nYour account balance is:')
+        print('Dollars: {0}' .format(payment.dollars))
+        print('Cents: {0}'.format(payment.cents))
+
+
+payment = PiggyBank(0, 0)
+print('\nHow much money do you have in your bank account? \n')
+cash()
+cash_deposit()
