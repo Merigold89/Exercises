@@ -1,0 +1,49 @@
+class Patient:
+    patient_list = []
+    
+    def __init__(self, name, last_name, age):
+        self.name = name
+        self.last_name = last_name
+        self.age = age
+        Patient.patient_list.append(self)
+
+    def __repr__(self):
+        return "Object of the class Patient. name: {}, last_name: {}, age: {}".format(self.name, self.last_name,
+                                                                                      self.age)
+
+    def __str__(self):
+        return "{} {}. {}".format(self.name, self.last_name, self.age)
+
+    def PrintPatient(self):
+        for patient in Patient.patient_list:
+            print(patient)
+
+
+def patient_list():
+    print('Provide patient details:')
+    print('Name:')
+    name = input()
+    print('Last name:')
+    last_name = input()
+    print('Age:')
+    age = input ()
+    patient = Patient(name, last_name, age)
+
+
+def another_patient():
+    print("\nDo you want to add another patient? Y / N")
+    decision = str(input())
+    if decision == 'Y':
+        patient_list()
+    return decision
+
+
+patient_list()
+
+while True:
+    decision = another_patient()
+    if decision != 'Y':
+        break
+
+#print(repr(patient))
+#print(patient)
