@@ -1,0 +1,4 @@
+email = input()
+address = email.split('@', 1)
+result = address[0]
+print(result)
