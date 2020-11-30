@@ -1,0 +1,5 @@
+print('Enter the number of rows # - the height of the pyramid:')
+height = int(input())
+
+for n in range(0, height):
+    print((n * '#' + '#' + n * '#').center(((height * 2) - 1)))
