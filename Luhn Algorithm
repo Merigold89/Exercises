@@ -4,43 +4,49 @@ from random import randrange
 # customer_account_number = (str(randrange(999999999))).zfill(9)
 
 customer_account_number = input('Enter account number:\n')
-sum_of_digits_check = customer_account_number[:-1]
+digits_check = customer_account_number[:-1]
 digit_list = []
 
-for digit in sum_of_digits_check:
+for digit in digits_check:
     digit_list += digit
-# print(f'Digit list - original:', digit_list)
+print(f'Digit list - original:', digit_list)
 
 # Multiply odd digits by 2:
 for i in range(0, 14):
     if (i % 2) == 0:
         digit_list[int(i)] = int(digit_list[int(i)]) * 2
-# print(f'Multiply odd digits by 2:', digit_list)
+print(f'Multiply odd digits by 2:', digit_list)
 
 # Subtract 9 to numbers over 9:
 for i in range(0, 14):
     if int(digit_list[int(i)]) > 9:
         digit_list[int(i)] = int(digit_list[int(i)]) - 9
-# print(f'Subtract 9 to numbers over 9:', digit_list)
+print(f'Subtract 9 to numbers over 9:', digit_list)
 
 digit_sum = 0
-# digit_sum_2 = 0
+digit_sum_2 = 0
 
 for digit in digit_list:
     # digit_list += digit
     digit_sum += int(digit)
 
-# for digit in sum_of_digits_check:
-    # digit_list += digit
-    # digit_sum_2 += int(digit)
+for digit in digits_check:
+    digit_list += digit
+    digit_sum_2 += int(digit)
 
 if (digit_sum // 10) == 0:
     checksum = 0
-    card_number = sum_of_digits_check + checksum
+    card_number = digits_check + checksum
 else:
     control_number = digit_sum % 10
     Luhn_number = 10 - control_number
-    card_number = sum_of_digits_check + str(Luhn_number)
+    card_number = digits_check + str(Luhn_number)
+
+print(f'Digits - checking of number:', digits_check)
+print(f'Digit sum - in Luhn algorithm:', digit_sum)
+print(f'Digit sum - normal number:', digit_sum_2)
+print(f'Luhn number:', Luhn_number)
+print(f'Card number:', card_number)
 
 if card_number == customer_account_number:
     print(f'The account number {customer_account_number} passed the Luhn algorithm!')
@@ -48,9 +54,3 @@ else:
     print(f'The account number {customer_account_number} did not pass the Luhn algorithm!')
     print(f'The account number should be: {card_number}')
     print(f'and it should be {Luhn_number} on the end.')
-
-# print(f'Digits - checking of number in Luhn algorithm:', digit_sum_2)
-# print(f'Digits - checking of number:', sum_of_digits_check)
-# print(f'Digit_sum:', digit_sum)
-# print(f'Luhn number:', Luhn_number)
-# print(f'Card number:', card_number)
