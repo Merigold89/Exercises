@@ -1,0 +1,8 @@
+import math
+edges = int(input('Enter the length of the side of the octahedron:\n'))
+
+area = 2 * math.sqrt(3) * pow(edges, 2)
+volume = 1 / 3 * math.sqrt(2) * pow(edges, 3)
+
+print(f'Calculated area value: {round(area, 2)}\n'
+      f'volumes: {round(volume, 2)}')
