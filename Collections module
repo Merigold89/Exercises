@@ -1,0 +1,11 @@
+from collections import namedtuple
+
+students = namedtuple('Student', ['name', 'age', 'department'])
+
+alina = students(name='Alina', age='22', department='linguistics')
+alex = students('Alex', '25', 'programming')
+kate = students('Kate', '19', 'art')
+
+print(alina)
+print(alex)
+print(kate)
