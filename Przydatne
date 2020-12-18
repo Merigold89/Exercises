@@ -3,10 +3,16 @@ number_list = [int(x) for x in input()]
 new_list = [sum(number_list[0:x:1]) for x in range(1, len(number_list) + 1)]
 print(new_list)
 
-
 # zamiana list na str: ['k', 'o', 't'] -> kot
 sentence = input()
 changes = [(ord(x) + 1) for x in sentence]
 sentence_2 = [str(chr(x)) for x in changes]
 result = ''.join(sentence_2)
 print(result)
+
+# zamiana cyfr/ liczb na litery za pomocą Unicode:
+n_range = int(input('How many numbers do you want to enter?\n'))
+print('Enter the numbers you want to convert to Unicode into letters:')
+numbers = [int(input()) for x in range(0, n_range)]
+word = [chr(x) for x in numbers]
+print(''.join(word))
