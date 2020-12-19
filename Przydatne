@@ -19,3 +19,15 @@ print(''.join(word))
 
 # liczby pierwsze w zakresie 2 - 1000:
 prime_numbers = [number for number in range(2, 1001) if all(number % i != 0 for i in range(2, number - 1))]
+
+# filtruje zagnieżdżone tablice w poszukiwaniu słowa <= prowadzonej liczbie:
+text = [["Glitch", "is", "a", "minor", "problem", "that", "causes", "a", "temporary", "setback"],
+        ["Ephemeral", "lasts", "one", "day", "only"],
+        ["Accolade", "is", "an", "expression", "of", "praise"]]
+length = int(input())
+new_list = []
+for words in text:
+    for word in words:
+        if len(word) <= length:
+            new_list.append(word)
+print(new_list)
