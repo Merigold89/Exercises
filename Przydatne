@@ -31,3 +31,12 @@ for words in text:
         if len(word) <= length:
             new_list.append(word)
 print(new_list)
+
+# wybiera z zagnieżdżonych list nazwisko studenta z oceną A i zapisuje w nowej liście:
+students = [["Jane", "B"], ["Kate", "B"], ["Alex", "C"], ["Elsa", "A"], ["Max", "B"], ["Chris", "A"]]
+A_grades = []
+for student in students:
+    for grade in student:
+        if grade == 'A':
+            A_grades.append(student[0])
+print(A_grades)
