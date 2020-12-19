@@ -34,9 +34,15 @@ print(new_list)
 
 # wybiera z zagnieżdżonych list nazwisko studenta z oceną A i zapisuje w nowej liście:
 students = [["Jane", "B"], ["Kate", "B"], ["Alex", "C"], ["Elsa", "A"], ["Max", "B"], ["Chris", "A"]]
+        # metoda 1
 A_grades = []
 for student in students:
     for grade in student:
         if grade == 'A':
             A_grades.append(student[0])
 print(A_grades)
+        # metoda 2
+A_grades = [student[0] for student in students for grade in student if grade == "A"]
+print(A_grades)
+        # metoda 3
+print([student for (student, grade) in students if grade == "A"])
