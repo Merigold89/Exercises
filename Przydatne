@@ -46,3 +46,8 @@ A_grades = [student[0] for student in students for grade in student if grade == 
 print(A_grades)
         # metoda 3
 print([student for (student, grade) in students if grade == "A"])
+
+# wycinanie key z wartością, jak nie ma to komunikat:
+squares = {1: 1, 3: 9, 5: 25, 6: 36, 8: 64, 10: 100, 11: 121, 15: 225}
+key = input()
+print(squares.pop(int(key), 'There is no such key'))
