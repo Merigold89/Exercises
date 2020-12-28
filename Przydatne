@@ -92,3 +92,9 @@ print(tiny_dict.items())
 test_dict = {"a": 43, "b": 1233, "c": 8}
 print(f' min: {min(test_dict, key=test_dict.get)}')
 print(f' max: {max(test_dict, key=test_dict.get)}')
+
+# zliczanie słów w podanym ciagu, wydruk słowa i ilości użyć:
+sentance = (str(input()).lower()).split()
+data = {word: sentance.count(word) for word in sentance}
+for key in data:
+    print(key, data[key])
