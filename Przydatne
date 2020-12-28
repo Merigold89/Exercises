@@ -87,3 +87,8 @@ print(tiny_dict.values())
 for obj in tiny_dict.items():
     print(obj)
 print(tiny_dict.items())
+
+# drukuje key dla min i max wartości w słowniku:
+test_dict = {"a": 43, "b": 1233, "c": 8}
+print(f' min: {min(test_dict, key=test_dict.get)}')
+print(f' max: {max(test_dict, key=test_dict.get)}')
