@@ -73,3 +73,17 @@ for num in range(0, len(groups)):
         value = None
     classes[key] = value
 print(classes)
+
+# słownik i iterację po: keys, value, obu:
+# keys:
+for obj in tiny_dict.keys():
+    print(obj)
+print(tiny_dict.keys()) 
+# value:
+for value in tiny_dict.values():
+    print(value)
+print(tiny_dict.values())
+# oba - jako tuples
+for obj in tiny_dict.items():
+    print(obj)
+print(tiny_dict.items())
