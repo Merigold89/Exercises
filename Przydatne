@@ -59,3 +59,17 @@ cards.update({"Jack": 11, "Queen": 12, "King": 13, "Ace": 14})
 hand = [input() for i in range(6)]
 
 print(sum(cards[card] for card in hand) / len(hand)) # lub print(sum(card[input()] for num in range(6)) / 6)
+
+# przypisywanie ilości do danych grup, jak brak ilości to None:
+groups = ['1A', '1B', '1C', '2A', '2B', '2C', '3A', '3B', '3C']
+classes = {}
+number = int(input())
+data = [int(input()) for _ in range(number)]
+for num in range(0, len(groups)):
+    key = groups[num]
+    if num < number:
+        value = data[num]
+    else:
+        value = None
+    classes[key] = value
+print(classes)
