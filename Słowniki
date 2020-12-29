@@ -21,3 +21,20 @@ def select_dates(pottential_dates):
     print(', '.join(names))
 
 select_dates(potential_dates)
+
+
+tracks = {"Woodkid": {"The Golden Age": "Run Boy Run",                              # rozpakowanie słowników z ich wydrukowaniem
+                      "On the Other Side": "Samara"},
+          "Cure": {"Disintegration": "Lovesong",
+                   "Wish": "Friday I'm in love"}}
+                   
+def tracklist(**musics): # funkcja
+    for music in musics:
+        print(f'{music}')
+        for key_album, value_song in musics[music].items():
+            print(f"ALBUM: {key_album} TRACK: {value_song}")
+            
+tracklist(Woodkid={"The Golden Age": "Run Boy Run", # wywołanie funkcji
+                   "On the Other Side": "Samara"},
+          Cure={"Disintegration": "Lovesong",
+                "Wish": "Friday I'm in love"})
