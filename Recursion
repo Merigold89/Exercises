@@ -1,0 +1,5 @@
+def number_of_frogs(year):                          # rekurencja zstępująca - zagłebiam sie do końca, daję daną początkową i rozpakowuję funkcję w górę
+    if year == 1:
+        return 120
+    frogs = number_of_frogs(year - 1)
+    return (frogs - 50) * 2
