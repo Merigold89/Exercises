@@ -10,3 +10,25 @@ freq_counter = Counter(text_list)
 result = freq_counter.most_common(number)
 for n in range(0, number):
     print(result[n][0], result[n][1])
+
+
+transactions = [(38177, 34.38), (876, 999.99), (654276, 653678), (54366, 0.99),                 # sumowanie wydatków na poszczegolnych kontach - wersja 1
+                (546, 987.65), (876, 3456), (654276, 0.55), (38177, 876.75), (876, 98.7)]
+
+transaction_dict = {}
+for customer in transactions:
+    transaction_dict.setdefault(customer[0], 0)
+    transaction_dict[customer[0]] += customer[1]
+
+for customer in transaction_dict:
+    transaction_dict[customer] = [transaction_dict[customer]]
+                                          
+transaction_dict = {}                                                                           # wersj 2 - przy nr konta drukuje listę wypłaconych środków
+
+for money, account in enumerate(transactions):
+    transaction_dict.setdefault(account[0], []).append(account[1])
+    
+for account in transactions:                                                                    # lub tak (wersja 3)
+    transaction_dict.setdefault(account[0], []).append(account[1])
+    
+print(transaction_dict)
