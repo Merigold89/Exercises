@@ -1,0 +1,12 @@
+from collections import Counter                                                       # tworzy automatycznie słownik i drukuje n wyrazów o najwyższej częstotliwosci występowania
+
+text = ("all I want is a proper cup of coffee made in a proper copper coffee pot. "
+        "I may be off my dot but I want a cup of coffee from a proper coffee pot.")
+number = int(input())
+text_list = text.split()
+freq_counter = Counter(text_list)
+
+#print(freq_counter)
+result = freq_counter.most_common(number)
+for n in range(0, number):
+    print(result[n][0], result[n][1])
