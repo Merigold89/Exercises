@@ -1,0 +1,27 @@
+from collections.abc import Hashable              # hashowanie. Objects trzeba podać.
+objects_dict = {}
+
+for i in objects:
+    if isinstance(i, Hashable) is True:
+        objects_dict[i] = hash(i)
+        
+        
+from collections.abc import Hashable               # zlicza ile zmiennych "zniknęło" z listy po hash z powodu tej samej nazwy
+
+object_list = [1, 397, 27468, -95, 1309, 397, -539874, -240767, -95, 397]
+objects_dict = {}
+
+for i in object_list:
+    #objects_dict[i] = hash(i)
+    if isinstance(i, Hashable) is True:
+      objects_dict.setdefault(i, []).append(hash(i))
+
+print(len(object_list) - len(objects_dict))
+print(objects_dict)
+counter = 0
+
+for i in objects_dict:
+    if len(objects_dict[i]) > 1:
+        counter += len(objects_dict[i])
+
+print(counter)
