@@ -25,3 +25,22 @@ for i in objects_dict:
         counter += len(objects_dict[i])
 
 print(counter)
+
+
+#hobbies_Adam = ('reading')                                            # zapisywanie zagnieżdżonych tuple do jednej tuple
+hobbies_Adam = ('reading', ('jogging', 'boxing', 'yoga'), 'movies')
+
+def unpack(input_tuple):
+    unpack = ()
+    if isinstance(input_tuple, str) is True:
+        unpack = input_tuple
+    else:
+        for i in input_tuple:
+            if isinstance(i, str) =is False:
+                for x in i:
+                    unpack += (x,)
+            else:
+                unpack += (i,)
+    return unpack
+
+print(unpack(hobbies_Adam))
