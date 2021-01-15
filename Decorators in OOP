@@ -1,0 +1,55 @@
+class Time:                                               # @classmethod decorator - przykład 1
+
+    def __init__(self, hour, minute):
+        self.hour = hour
+        self.minute = minute
+
+    @classmethod
+    def from_string(cls, data):
+        hour, minute = data.split(":")
+        return cls(hour, minute)
+
+time = Time.from_string('14:05')
+
+print(time.hour)
+print(time.minute)
+
+
+class Person:                                              # @classmethod decorator - przykład 2
+
+    def __init__(self, name, email):
+        self.name = name
+        self.email = email
+
+    @classmethod
+    def from_string(cls, data):
+        name, email = data.split("-")
+        return cls(name, email)
+
+
+class Date:                                               # @property decorator
+
+    def __init__(self, day, month):
+        self.day = day
+        self.month = month
+
+    @property
+    def date(self):
+        return f'{str(self.day)}/{str(self.month)}'
+
+
+date_obj = Date('14', '05')
+print(date_obj.date)  # 14/05
+
+date_obj.day = '15'
+print(date_obj.date)  # 15/05
+
+
+class Area:                                              # @staticmethod decorator
+
+    def __init__(self, figure_name):
+        self.figure_name = figure_name
+
+    @staticmethod
+    def rhombus_area(a, b):
+        return 0.5 * a * b
