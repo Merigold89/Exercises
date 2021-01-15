@@ -1,0 +1,62 @@
+class Mammal:                                                 # drukowanie tej samej zmiennej z innymi danymi
+    def __init__(self):
+        self.bio_class = "mammal"
+
+    def greet(self):
+        print("I am a {}!".format(self.bio_class))
+
+
+class Dolphin(Mammal):
+    def __init__(self):
+        Mammal.__init__(self)
+        super().greet()
+        self.bio_class = "dolphin"
+
+dolph = Dolphin()
+dolph.greet()
+
+class Account:                                                 # powiązanie danych z dwóch różnych kont - Instagram
+    def __init__(self, media, username, n_followers):
+        self.media = media
+        self.username = username
+        self.n_followers = n_followers
+        print("Account")
+
+
+class InstagramAccount(Account):                                # zadanie z trójkatem równobocznym
+    def __init__(self, username, n_followers, n_following):
+        self.n_following = n_following
+        super().__init__("Instagram", username, n_followers)
+
+class Triangle:
+    def __init__(self, side1, side2, side3):
+        self.side1 = side1
+        self.side2 = side2
+        self.side3 = side3
+
+    def get_perimeter(self):
+        return self.side1 + self.side2 + self.side3
+
+
+class EquilateralTriangle(Triangle):
+    def __init__(self, side):
+        super().__init__(side, side, side)
+        
+class Robot:                                                      # przypisanie Robotowi brakujacej (i wymaganej przez główny Init) zmiennej
+    def __init__(self, name, variety):
+        self.name = name
+        self.variety = variety
+        print("Robot")
+
+    def get_info(self):
+        return "{} is a {} robot".format(self.name, self.variety)
+
+
+class ServiceRobot(Robot):
+    def __init__(self, name):
+        super().__init__(name, "service")
+        self.name = name
+
+
+chappi = ServiceRobot("Chappi")
+print(chappi.get_info())
