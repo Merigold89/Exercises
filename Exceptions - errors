@@ -1,0 +1,51 @@
+class NotInBoundsError(Exception):                                    # przykład 1
+    def __str__(self):
+        return "There is an error!"
+        
+def check_integer(num):
+    if not 45 < num < 67:
+        raise NotInBoundsError
+    else:
+        print(num)
+            
+def error_handling(num):
+    try:
+        check_integer(num)
+    except NotInBoundsError as err:
+        print(err)
+        
+class WordError(Exception):                                         # przykład 2
+    def __str__(self):
+        print("There is a W letter!")
+
+
+def check_w_letter(word):
+    for letter in word:
+        if letter in ('w', 'W'):
+            raise WordError
+        else:
+            return word
+            
+class NotWordError(Exception):                                       # przykład 3
+    def __init__(self, word):
+        self.message = word + " is not a word, sorry!"
+        super().__init__(self.message)
+
+def check_word(word):
+    if "0" in word:
+        return NotWordError(word)
+    else:
+        return word
+
+def error_handling(word):
+    try:
+        result = check_word(word)
+        if result is NotWordError:
+            raise NotWordError
+        else:
+            print(result)
+    except NotWordError as err:
+        print(err)
+
+_word = '0pies'
+error_handling(_word)
