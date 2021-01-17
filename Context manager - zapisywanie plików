@@ -2,3 +2,12 @@ for number in range(1, 11):                             # tworzenie i otwieranie
     name = f'file{number}.txt'
     with open(name, 'at') as file:
         file.write(f'number {number}')
+
+with open('salary.txt', 'r', encoding='utf-8') as file:     # wczytanie pliku z wypłatanmi, przemnożenie przez 12 miesięcy i zapisanie jako nowy plik
+    mon_salary = file.read().split()
+    new = []
+    for i in mon_salary:
+        new.append(int(i) * 12)
+with open('salary_year.txt', 'at') as file2:
+    for i in new:
+        file2.write(str(i) + '\n')
