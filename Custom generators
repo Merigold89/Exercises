@@ -24,3 +24,15 @@ def even(number):
 function = even(number)
 for i in range(0, number):
     print(next(function))
+
+number = int(input())                                   # generator kwadratów liczb naturalnych
+
+def squares(number):
+    x, y = 1, 1
+    for _ in range(number):
+        x, y = y ** 2, y + 1
+        yield x
+
+function = squares(number)
+for _ in range(0, number):
+    print(next(function))
