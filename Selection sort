@@ -1,0 +1,16 @@
+def sort_names(list_of_names):                                          # sortuje imiona według długości - od najdłuższego do najkrótszego
+    """Sort names by length in descending order."""
+    print(list_of_names)
+    for i in range(len(list_of_names) - 1):
+        index = i
+
+        for j in range(i + 1, len(list_of_names)):
+            if len(list_of_names[j]) > len(list_of_names[index]):
+                index = j
+
+        list_of_names[i], list_of_names[index] = list_of_names[index], list_of_names[i]
+    return list_of_names
+
+names = ["Alice", "Bob", "John", "Andrew"]
+
+print(sort_names(names))
