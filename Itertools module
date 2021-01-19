@@ -18,11 +18,11 @@ price_desserts = [2, 4]
 drinks = ['cola', 'wine']
 price_drinks = [3, 10]
 
-first_dish = set(zip(main_courses, price_main_courses))
-second_dish = set(zip(desserts, price_desserts))
-third_dish = set(zip(drinks, price_drinks))
+first_dish = zip(main_courses, price_main_courses)
+second_dish = zip(desserts, price_desserts)
+third_dish = zip(drinks, price_drinks)
 
-for first, second, third in itertools.product(first_dish, second_dish, third_dish): # drukuj zestaw poniżej 30
+for first, second, third in itertools.product(first_dish, second_dish, third_dish):
     if first[1] + second[1] + third[1] <= 30:
         print(first[0], second[0], third[0], first[1] + second[1] + third[1])
  
