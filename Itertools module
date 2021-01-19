@@ -1,0 +1,28 @@
+import itertools                                                            # krzyżowanie wszystkich kombinacji imion
+
+first_names = ['Anna', 'Catarina']
+middle_names = ['Luisa', 'Maria']
+
+for first, second in itertools.product(first_names, middle_names):
+    print(first, second)
+    
+    
+import itertools                                                            # szukanie kombinacji dań za sumę poniżej 30
+
+main_courses = ['beef stew', 'fried fish']
+price_main_courses = [28, 23]
+
+desserts = ['ice-cream', 'cake']
+price_desserts = [2, 4]
+
+drinks = ['cola', 'wine']
+price_drinks = [3, 10]
+
+first_dish = set(zip(main_courses, price_main_courses))
+second_dish = set(zip(desserts, price_desserts))
+third_dish = set(zip(drinks, price_drinks))
+
+for first, second, third in itertools.product(first_dish, second_dish, third_dish): # drukuj zestaw poniżej 30
+    if first[1] + second[1] + third[1] <= 30:
+        print(first[0], second[0], third[0], first[1] + second[1] + third[1])
+ 
