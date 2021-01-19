@@ -11,3 +11,16 @@ fibonacci_sequence = []
 for i in range(0, number):
     fibonacci_sequence.append(next(function))
 print(fibonacci_sequence)
+
+
+number = int(input())                                       # generator liczb parzystych
+
+def even(number):
+    x = -2
+    for _ in range(number):
+        x = x + 2
+        yield x
+
+function = even(number)
+for i in range(0, number):
+    print(next(function))
