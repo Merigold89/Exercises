@@ -1,0 +1,13 @@
+number = int(input())                                         # generator liczb Fibonacci'ego
+
+def fibonacci(number):
+    x, y = 1, 0
+    for _ in range(number):
+        x, y = y, x + y
+        yield x
+
+function = (fibonacci(number))
+fibonacci_sequence = []
+for i in range(0, number):
+    fibonacci_sequence.append(next(function))
+print(fibonacci_sequence)
