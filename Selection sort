@@ -14,3 +14,22 @@ def sort_names(list_of_names):                                          # sortuj
 names = ["Alice", "Bob", "John", "Andrew"]
 
 print(sort_names(names))
+
+def selection_sort_minmax(elements):                                         # naprzemienie drukuje min i max liczbę
+    for i in range(0, len(elements) - (len(elements) % 2), 2):
+        min_i = i
+        max_i = i + 1
+        if elements[min_i] > elements[max_i]:
+            elements[min_i], elements[max_i] = elements[max_i], elements[min_i]
+        for j in range(i, len(elements)):
+            if elements[j] < elements[min_i]:
+                min_i = j
+            if elements[j] > elements[max_i]:
+                max_i = j
+        elements[i], elements[min_i], elements[i + 1], elements[max_i] = elements[min_i], elements[i], elements[max_i], elements[i + 1]
+    out_put_list = [str(elem) for elem in elements]
+    separator = ' '
+    return separator.join(out_put_list)
+
+input_int_list = [int(elem) for elem in input().split()]
+print(selection_sort_minmax(input_int_list))
