@@ -1,0 +1,22 @@
+SELECT column_name [, list_of_other_columns]                                          # Summing up, the template for queries
+     , aggregation [, list_of_aggregations]
+FROM table_name
+[WHERE list_of_conditions]
+GROUP BY column_name [, list_of_other_columns]
+[HAVING list_of_aggregate_conditions]
+[ORDER BY list_of_columns/aliases];
+
+
+SELECT                                                                                # przykład 1
+    DISTINCT racer_id, 
+    segment_id, 
+    MIN(time) AS min_time
+FROM 
+    racing
+GROUP BY 
+    racer_id, 
+    segment_id
+ORDER BY
+    min_time ASC / DESC
+    
+UPDATE movies SET title = concat('The ', title), release_year = release_year - 1      # concat dodaje str do str - łączy tekst
