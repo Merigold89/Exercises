@@ -20,3 +20,5 @@ ORDER BY
     min_time ASC / DESC
     
 UPDATE movies SET title = concat('The ', title), release_year = release_year - 1      # concat dodaje str do str - łączy tekst
+
+UPDATE games SET publisher = "Macrofiber", users_rating = users_rating-2.5 WHERE title = "Bridges" OR title = "Ship Simulator 2"         # używanie zmiany w funkcji logicznej
