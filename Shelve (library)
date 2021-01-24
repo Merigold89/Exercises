@@ -1,0 +1,7 @@
+lib = shelve.open("my_library")                                                 # przykład 1
+lib["Twilight Saga"] = ["Twilight", "New Moon", "Eclipse", "Breaking Dawn"]
+
+for book in lib:
+    print(book + ";", lib[book])
+
+lib.close()
