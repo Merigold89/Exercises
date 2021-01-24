@@ -5,3 +5,26 @@ for book in lib:
     print(book + ";", lib[book])
 
 lib.close()
+
+lib = shelve.open("my_library", writeback=False)                                # kasowanie sposób 1 - False i .pop()
+lib["Divergent trilogy"] = ["Divergent", "Insurgent", "	Allegiant"]
+lib["The Lord of the Rings"] = ["The Fellowship of the Ring", "The Two Towers", "The Return of the King", "The Silmarillion"]
+
+temp = lib["The Lord of the Rings"]
+temp.pop(3)
+lib["The Lord of the Rings"] = temp
+
+print(len(lib["The Lord of the Rings"]))
+
+lib.close()
+
+
+lib = shelve.open("my_library", writeback=True)                                 # kasowanie sposób 2 - TRUE i  del
+lib["Divergent trilogy"] = ["Divergent", "Insurgent", "	Allegiant"]
+lib["The Lord of the Rings"] = ["The Fellowship of the Ring", "The Two Towers", "The Return of the King", "The Silmarillion"]
+
+del lib["The Lord of the Rings"][3]
+
+print(len(lib["The Lord of the Rings"]))
+
+lib.close()
