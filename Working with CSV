@@ -8,3 +8,14 @@ with open("government-finance-statistics-general-government-year-ended-june-2019
         if "FINAL" in line:
             total = total + 1
 print(total)
+
+
+import csv                                          # tytyłu jako key w dict - pozwala zliczać dane w wersach
+
+with open("alcohol-available-for-consumption-year-ended-december-2019-csv.csv", newline='') as data:
+    count = 0
+    file_reader = csv.DictReader(data, delimiter=",")  # Create a reader object
+    for line in file_reader:
+        if line['MAGNITUDE'] == '0':
+            count += 1
+print(count)
