@@ -1,0 +1,11 @@
+import csv                                          # zlicz linijki ze statusem FINAL
+
+with open("government-finance-statistics-general-government-year-ended-june-2019-csv.csv", newline='') as data:
+#  crimes = open('government-finance-statistics-general-government-year-ended-june-2019-csv.csv', 'r')
+    count = 0
+    file_reader = csv.reader(data, delimiter=",")  # Create a reader object
+    total = 0
+    for line in file_reader:
+        if "FINAL" in line:
+            total = total + 1
+print(total)
