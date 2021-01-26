@@ -16,3 +16,5 @@ template = '[-\=\.a-z\d_]{6,30}@hyperskill\.org$'              # mail 6-30 znak�
 template = '[-\w]{5,}$'                                        # hasło: małe i duże liter, cyfry, - i _ oraz min 5 znaków
 
 template = '<[a-z]{1,}>[\w]{0,}<\/[a-z]+.*?>'                  # szukanie pary tagów
+template = '<[a-z]{1,}>.*?<\/[a-z]{1,}>'
+template = '<[a-z]+>.*?<\/[a-z]+>'
