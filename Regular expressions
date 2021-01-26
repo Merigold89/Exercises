@@ -9,4 +9,6 @@ template = '[0-9a-fA-F][0-9a-fA-F]?'                            # liczby szestna
        
 template = 'M[rs][.]? Smith'                                   # zwrot grzecznościowy Mr, Ms Mr., Ms.
 
-template = "[A-Z]{2}\s?\d{2}\s?[A-Z]{2}\s?\d{4}$"                # tablice aut w Indiach - 2 duże litery, 2 cyfry, 2 dl, 4 cyfry, koniec, między nimi możliwe przerwy
+template = "[A-Z]{2}\s?\d{2}\s?[A-Z]{2}\s?\d{4}$"             # tablice aut w Indiach - 2 duże litery, 2 cyfry, 2 dl, 4 cyfry, koniec, między nimi możliwe przerwy
+
+template = '[-\=\.a-z\d_]{6,30}@hyperskill\.org$'              # mail 6-30 znaków, tylko małe litery oraz: - _ = .
