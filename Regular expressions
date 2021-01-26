@@ -13,4 +13,4 @@ template = "[A-Z]{2}\s?\d{2}\s?[A-Z]{2}\s?\d{4}$"             # tablice aut w In
 
 template = '[-\=\.a-z\d_]{6,30}@hyperskill\.org$'              # mail 6-30 znaków, tylko małe litery oraz: - _ = .
 
-template = '[-\w]{5,}$'                                        # hasło: małe i duże liter, cyfry, - i _
+template = '[-\w]{5,}$'                                        # hasło: małe i duże liter, cyfry, - i _ oraz min 5 znaków
