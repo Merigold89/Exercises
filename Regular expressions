@@ -1,0 +1,6 @@
+import re                                                       # sprawdzanie emotikonek
+
+string = [':)', ':-)', ':(', ':-(', ':o', ':-o']
+template = r'[:o][-]?[:o)(]'
+for emot in string:
+    print(re.match(template, emot))
