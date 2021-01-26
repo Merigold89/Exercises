@@ -4,3 +4,7 @@ string = [':)', ':-)', ':(', ':-(', ':o', ':-o']
 template = r'[:o][-]?[:o)(]'
 for emot in string:
     print(re.match(template, emot))
+
+import re                                                      # liczby szestnastkowe
+
+template = '[0-9a-fA-F][0-9a-fA-F]?'
