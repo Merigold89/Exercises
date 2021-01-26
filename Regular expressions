@@ -24,3 +24,10 @@ from nltk.tokenize import regexp_tokenize                     # dzielenie tekstu
 
 text = input()
 print(regexp_tokenize(text, "[A-z'-]+"))
+
+
+from nltk.tokenize import WordPunctTokenizer                # wyróżnia w tekście także znaki interpunkcyjne
+
+text = input()
+wpt = WordPunctTokenizer()
+print(wpt.tokenize(text))
