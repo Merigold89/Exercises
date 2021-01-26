@@ -12,3 +12,5 @@ template = 'M[rs][.]? Smith'                                   # zwrot grzeczno�
 template = "[A-Z]{2}\s?\d{2}\s?[A-Z]{2}\s?\d{4}$"             # tablice aut w Indiach - 2 duże litery, 2 cyfry, 2 dl, 4 cyfry, koniec, między nimi możliwe przerwy
 
 template = '[-\=\.a-z\d_]{6,30}@hyperskill\.org$'              # mail 6-30 znaków, tylko małe litery oraz: - _ = .
+
+template = '[-\w]{5,}$'                                        # hasło: małe i duże liter, cyfry, - i _
