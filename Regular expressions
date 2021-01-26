@@ -31,3 +31,12 @@ from nltk.tokenize import WordPunctTokenizer                # wyróżnia w tekś
 text = input()
 wpt = WordPunctTokenizer()
 print(wpt.tokenize(text))
+
+from nltk.tokenize import regexp_tokenize                   # Dzieli tesk na zdania. Wybrane zdanie dzieli na wyrazy -bez cyfr i interpunkcji.
+from nltk.tokenize import sent_tokenize
+
+text = input()
+number = int(input())
+sentance = sent_tokenize(text)
+words = regexp_tokenize(sentance[number], "[A-z'-]+")
+print(words)
