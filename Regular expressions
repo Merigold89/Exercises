@@ -18,3 +18,9 @@ template = '[-\w]{5,}$'                                        # hasło: małe i
 template = '<[a-z]{1,}>[\w]{0,}<\/[a-z]+.*?>'                  # szukanie pary tagów
 template = '<[a-z]{1,}>.*?<\/[a-z]{1,}>'
 template = '<[a-z]+>.*?<\/[a-z]+>'
+
+
+from nltk.tokenize import regexp_tokenize                     # dzielenie tekstu za pomocą wyrażeń regularnych
+
+text = input()
+print(regexp_tokenize(text, "[A-z'-]+"))
